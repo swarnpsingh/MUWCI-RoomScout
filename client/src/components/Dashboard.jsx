@@ -26,7 +26,7 @@ const Dashboard = ({ user }) => {
   const [selectedRoom, setSelectedRoom] = useState(null);
 
   useEffect(() => {
-    const ws = new ReconnectingWebSocket('ws://localhost:5000');
+    const ws = new ReconnectingWebSocket('ws://muwci-roomscout.onrender.com');
 
     ws.onmessage = (message) => {
       const data = JSON.parse(message.data);
@@ -49,7 +49,7 @@ const Dashboard = ({ user }) => {
   }, []);
 
   const handleJoinOrLeaveRoom = (room) => {
-    const ws = new ReconnectingWebSocket('ws://localhost:5000');
+    const ws = new ReconnectingWebSocket('ws://muwci-roomscout.onrender.com');
     const isStudying = isStudyingInRoom[room];
     
     ws.onopen = () => {
