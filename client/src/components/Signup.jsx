@@ -12,7 +12,7 @@ const Signup = ({ setUser }) => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/auth/signup', { name, username, password });
+      const res = await axios.post('https://muwci-roomscout.onrender.com/auth/signup', { name, username, password });
   
       const user = res.data.user;
       console.log('User Data on Signup:', user);  // Add this to check the user data
