@@ -5,7 +5,7 @@ const AdminPage = () => {
   // Function to reset the room counts
   const resetRoomCounts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/reset-counts', {
+      const response = await fetch('https://muwci-roomscout.onrender.com/reset-counts', {
         method: 'POST',
       });
       const data = await response.json();
