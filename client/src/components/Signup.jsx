@@ -9,32 +9,32 @@ const Signup = ({ setUser }) => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('https://muwci-roomscout.onrender.com/auth/signup', { name, username, password });
+const handleSignup = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post('https://muwci-roomscout.onrender.com/auth/signup', 
+      { name, username, password }, 
+      { withCredentials: true }  // Add this to ensure cookies and credentials are sent
+    );
 
-      const user = res.data.user;
-      console.log('User Data on Signup:', user);  // Debugging to check user data
+    const user = res.data.user;
+    console.log('User Data on Signup:', user);
 
-      setUser(user);
-      setMessage('User Registered successfully! Redirecting to dashboard...');
-
-      // Redirect after 2 seconds
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 2000);
-    } catch (err) {
-      console.error('Signup error:', err);
-
-      // Error handling for Axios Network Error or Server error
-      if (err.response && err.response.data && err.response.data.message) {
-        setMessage(err.response.data.message); // If error message exists from server
-      } else {
-        setMessage('An error occurred. Please try again.'); // Generic error message
-      }
+    setUser(user);
+    setMessage('User Registered successfully! Redirecting to dashboard...');
+    setTimeout(() => {
+      navigate('/dashboard');
+    }, 2000);
+  } catch (err) {
+    console.error('Signup error:', err);
+    if (err.response && err.response.data && err.response.data.message) {
+      setMessage(err.response.data.message);
+    } else {
+      setMessage('An error occurred. Please try again.');
     }
-  };
+  }
+};
+
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-black to-gray-900 overflow-hidden">
