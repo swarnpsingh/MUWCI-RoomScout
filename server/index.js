@@ -8,9 +8,8 @@ import { WebSocketServer } from 'ws';
 const app = express();
 
 // Middleware
-// Update CORS configuration
 app.use(cors({
-  origin: 'https://muwci-room-scout.vercel.app/', 
+  origin: 'https://muwci-room-scout.vercel.app', 
   credentials: true,
 }));
 app.use(express.json());
