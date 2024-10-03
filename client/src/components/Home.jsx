@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Home = () => {
   const navigate = useNavigate(); 
@@ -32,10 +33,11 @@ const Home = () => {
             </button>
           </div>
         </div>
-
         {/* Ellipse at the bottom */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[150%] h-80 bg-gradient-to-b from-transparent to-blue-900 rounded-full opacity-30 blur-3xl z-0"></div>
       </div>
+        <Footer />
+      
     </div>
   );
 };
