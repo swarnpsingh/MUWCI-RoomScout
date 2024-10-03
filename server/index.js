@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://muwci-room-scout.vercel.app', 
+  origin: 'https://roomscout.vercel.app', 
   credentials: true,
 }));
 app.use(express.json());
