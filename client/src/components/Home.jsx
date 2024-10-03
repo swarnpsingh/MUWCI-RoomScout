@@ -15,8 +15,7 @@ const Home = () => {
             Fostering group studies
           </h1>
           <p className="text-gray-500 font-bold mb-4 sm:mb-8">
-            Login with your MUWCI Student ID and your first name and last name's
-            initial.
+            Sign up with your name, and use the app safely.
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center justify-center">
             <button

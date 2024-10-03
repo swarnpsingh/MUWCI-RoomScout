@@ -18,7 +18,9 @@ function Navbar() {
       >
         Login
       </button>
-      <FontAwesomeIcon className="sm:size-8 size-6 cursor-pointer" icon={faCodeFork} style={{ color: "#07a1e3" }} />
+      <a href="https://github.com/swarnpsingh/MUWCI-RoomScout" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon className="sm:size-8 size-6 cursor-pointer" icon={faCodeFork} style={{ color: "#07a1e3" }} />
+      </a>
       </div>
     </div>
   );
